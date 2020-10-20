@@ -1,0 +1,6 @@
+# Windows shortcut files
+*.lnk
+# Temporary vim files
+*.swp
+
+
