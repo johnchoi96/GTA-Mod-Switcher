@@ -1,8 +1,10 @@
 
 @echo off
+:: Change to the directory with the game files
 D:
 cd Steam\steamapps\common\
 
+:: Ask the user for input
 ECHO Do you want to play with mods or just online?
 SET /P _userPrompt= Type either "mods" or "online": 
 
@@ -25,4 +27,5 @@ IF "%_userPrompt%"=="mods" (
 
 ECHO Task finished...
 SET /P _confirm= Press ENTER to finish...
+@echo off
 
