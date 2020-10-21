@@ -8,7 +8,6 @@ cd Steam\steamapps\common\
 
 SET /P _userPrompt= ENABLE MODS? (y/n): 
 
-ECHO %_userPrompt%
 IF /I "%_userPrompt%"=="Y" (
 	IF NOT EXIST "Grand Theft Auto V - clean" (
 		ECHO ENABLING MODS...
@@ -25,15 +24,24 @@ IF /I "%_userPrompt%"=="Y" (
 
 :end
 
-ECHO Task finished...
 SET /P _runGame= Run Game? (y/n): 
 
 IF /I "%_runGame%"=="Y" (
 	ECHO Starting Grand Theft Auto V...
-	start steam://rungameid/271590
+	IF /I "%_userPrompt%"=="Y" (
+		:: step into the game directory
+		cd "Grand Theft Auto V"
+		IF NOT EXIST "RAGEPluginHook.exe" (
+			ECHO Something went wrong. RPH does not exist!
+		) ELSE (
+			"RAGEPluginHook.exe"
+		)
+	) ELSE (
+		start steam://rungameid/271590
+	)
 )
 
-ECHO Task Complete...
+ECHO Program Complete...
 SET /P _confirm= Press ENTER to exit...
 
 @echo on
