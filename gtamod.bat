@@ -4,6 +4,17 @@
 D:
 cd Steam\steamapps\common\
 
+:: Check to see which version is active
+IF EXIST "Grand Theft Auto V - clean" (
+	ECHO MODS are ACTIVE
+) ELSE (
+	ECHO MODS are INACTIVE
+)
+
+
+ECHO.
+ECHO.
+
 :: Ask the user for input
 
 SET /P _userPrompt= ENABLE MODS? (y/n): 
