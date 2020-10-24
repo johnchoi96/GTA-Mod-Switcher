@@ -24,20 +24,22 @@ IF /I "%_userPrompt%"=="Y" (
 		ECHO ENABLING MODS...
 		ren "Grand Theft Auto V" "Grand Theft Auto V - clean"
 		ren "Grand Theft Auto V - mods" "Grand Theft Auto V"
+		:: sleep for 3 seconds for the changes to take effect
+		:: pings for the specified time in seconds before continuing
+		PING localhost -n 4 >NUL
 	)
 ) ELSE (
 	IF NOT EXIST "Grand Theft Auto V - mods" (
 		ECHO DISABLING MODS...
 		ren "Grand Theft Auto V" "Grand Theft Auto V - mods"
 		ren "Grand Theft Auto V - clean" "Grand Theft Auto V"
+		:: sleep for 3 seconds for the changes to take effect
+		:: pings for the specified time in seconds before continuing
+		PING localhost -n 4 >NUL
 	)
 )
 
 :end
-
-:: sleep for 3 seconds for the changes to take effect
-:: pings for the specified time in seconds before continuing
-PING localhost -n 4 >NUL
 
 SET /P _runGame= Run Game? (y/n): 
 
