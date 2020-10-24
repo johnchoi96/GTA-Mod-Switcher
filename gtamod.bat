@@ -35,6 +35,10 @@ IF /I "%_userPrompt%"=="Y" (
 
 :end
 
+:: sleep for 3 seconds for the changes to take effect
+:: pings for the specified time in seconds before continuing
+PING localhost -n 4 >NUL
+
 SET /P _runGame= Run Game? (y/n): 
 
 IF /I "%_runGame%"=="Y" (
@@ -52,8 +56,12 @@ IF /I "%_runGame%"=="Y" (
 	)
 )
 
+ECHO.
 ECHO Program Complete...
-SET /P _confirm= Press ENTER to exit...
+ECHO.
+
+:: Press any key to continue message
+PAUSE
 
 @echo on
 
