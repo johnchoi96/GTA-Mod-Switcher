@@ -41,6 +41,12 @@ IF /I "%_userPrompt%"=="Y" (
 
 :end
 
+IF EXIST "Grand Theft Auto V - clean" (
+	ECHO MODS are ACTIVE
+) ELSE (
+	ECHO MODS are INACTIVE
+)
+
 SET /P _runGame= Run Game? (y/n): 
 
 IF /I "%_runGame%"=="Y" (
