@@ -2,5 +2,6 @@
 *.lnk
 # Temporary vim files
 *.swp
-
+# VS support files
+.vs/
 
