@@ -55,7 +55,11 @@ namespace GTA_Launcher
         {
             get
             {
-                return true;
+                string cleanPath = @"D:Steam\steamapps\common\Grand Theft Auto V - clean";
+                cleanPath = Environment.ExpandEnvironmentVariables(cleanPath);
+                string modPath = @"D:Steam\steamapps\common\Grand Theft Auto V - mods";
+                modPath = Environment.ExpandEnvironmentVariables(modPath);
+                return Directory.Exists(cleanPath) ^ Directory.Exists(modPath);
             }
         }
 
