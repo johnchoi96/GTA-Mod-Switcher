@@ -1,13 +1,3 @@
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/bin/Debug/GTA_Launcher.exe.config
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/bin/Debug/GTA_Launcher.exe
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/bin/Debug/GTA_Launcher.pdb
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.csprojAssemblyReference.cache
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.Properties.Resources.resources
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.csproj.GenerateResource.cache
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.csproj.CoreCompileInputs.cache
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.exe
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.pdb
-C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.MainScreen.resources
 /Users/jchoi/Csharp/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/bin/Debug/GTA_Launcher.exe.config
 /Users/jchoi/Csharp/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/bin/Debug/GTA_Launcher.exe
 /Users/jchoi/Csharp/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/bin/Debug/GTA_Launcher.pdb
@@ -18,3 +8,13 @@ C:/Users/chois/Saved Games/GTA Tools/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/
 /Users/jchoi/Csharp/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.csproj.CoreCompileInputs.cache
 /Users/jchoi/Csharp/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.exe
 /Users/jchoi/Csharp/GTA-Mod-Switcher/GTA_Launcher/GTA_Launcher/obj/Debug/GTA_Launcher.pdb
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\bin\Debug\GTA_Launcher.exe.config
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\bin\Debug\GTA_Launcher.exe
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\bin\Debug\GTA_Launcher.pdb
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\obj\Debug\GTA_Launcher.MainScreen.resources
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\obj\Debug\GTA_Launcher.Properties.Resources.resources
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\obj\Debug\GTA_Launcher.csproj.GenerateResource.cache
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\obj\Debug\GTA_Launcher.csproj.CoreCompileInputs.cache
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\obj\Debug\GTA_Launcher.exe
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\obj\Debug\GTA_Launcher.pdb
+C:\Users\chois\Saved Games\GTA Tools\GTA-Mod-Switcher\GTA_Launcher\GTA_Launcher\obj\Debug\GTA_Launcher.csprojAssemblyReference.cache
