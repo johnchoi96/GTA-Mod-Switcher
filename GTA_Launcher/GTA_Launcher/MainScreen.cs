@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -91,6 +92,8 @@ namespace GTA_Launcher
 
             // set up toggle button label
             ModToggleBtn.Text = ModEnabled ? "Disable Mod" : "Enable Mod";
+            // set up mod status label
+            ModStatusLabel.Text = ModEnabled ? "Enabled" : "Disabled";
         }
 
         private void SetPathClicked(object sender, EventArgs e)
@@ -130,6 +133,7 @@ namespace GTA_Launcher
             EnableMod(!ModEnabled);
             StatusLabel.Text = "Idle";
             ModToggleBtn.Text = ModEnabled ? "Disable Mod" : "Enable Mod";
+            ModStatusLabel.Text = ModEnabled ? "Enabled" : "Disabled";
         }
 
         /**
@@ -176,11 +180,36 @@ namespace GTA_Launcher
         }
 
         /**
-         * TODO: Implement
+         * Runs the game.
+         * Runs RPH if mod is enabled, steam version if not.
          */
         private void RunGameClicked(object sender, EventArgs e)
         {
-            Console.WriteLine(ModExists);
+            if (ModEnabled)
+            {
+                try
+                {
+                    // set the current working directory
+                    Directory.SetCurrentDirectory(GamePath + @"Grand Theft Auto V");
+                    // Start the process with the info we specified.
+                    Process.Start("RAGEPluginHook.exe");
+                }
+                catch (Exception exception)
+                {
+                    // Log error.
+                    string msgtitle = "Error";
+                    string msgmessage = exception.Message;
+                    MessageBoxIcon msgicon = MessageBoxIcon.Error;
+                    MessageBoxButtons msgbuttons = MessageBoxButtons.OK;
+                    MessageBox.Show(msgmessage, msgtitle, msgbuttons, msgicon);
+                    return;
+                }
+            }
+            else
+            {
+                // start GTA using Steam appid
+                Process.Start(@"steam://rungameid/271590");
+            }
         }
 
         /**
