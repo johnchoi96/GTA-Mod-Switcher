@@ -77,6 +77,7 @@ namespace GTA_Launcher
         public MainScreen()
         {
             InitializeComponent();
+            MaximizeBox = false;
             // check if game directory has been set
             if (GamePath == "")
             {
