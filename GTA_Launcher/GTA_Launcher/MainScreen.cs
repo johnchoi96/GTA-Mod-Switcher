@@ -78,16 +78,8 @@ namespace GTA_Launcher
         {
             InitializeComponent();
             MaximizeBox = false;
-            // check if game directory has been set
-            if (GamePath == "")
-            {
-                SetButtonState();
-            }
-
-            // set up toggle button label
-            ModToggleBtn.Text = ModEnabled ? "Disable Mod" : "Enable Mod";
-            // set up mod status label
-            ModStatusLabel.Text = ModEnabled ? "Enabled" : "Disabled";
+            // Set up buttons based on current setup state.
+            SetButtonState();
         }
 
         private void SetPathClicked(object sender, EventArgs e)
@@ -104,6 +96,8 @@ namespace GTA_Launcher
             string folderPath = dialog.SelectedPath;
             GamePath = folderPath;
 
+            // update button states
+            SetButtonState();
             if (!GTAExists)
             {
                 string title = "Invalid Directory!";
@@ -118,7 +112,11 @@ namespace GTA_Launcher
                 MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SetButtonState();
+        }
+
+        private void OpenPathClicked(object sender, EventArgs e)
+        {
+            Process.Start(GamePath + @"\Grand Theft Auto V");
         }
 
         private void ToggleClicked(object sender, EventArgs e)
@@ -126,12 +124,11 @@ namespace GTA_Launcher
             StatusLabel.Text = "Running";
             EnableMod(!ModEnabled);
             StatusLabel.Text = "Idle";
-            ModToggleBtn.Text = ModEnabled ? "Disable Mod" : "Enable Mod";
-            ModStatusLabel.Text = ModEnabled ? "Enabled" : "Disabled";
         }
 
         /**
          * Enables or disables (toggles) the mod status for GTA V.
+         * Sets the button states after task.
          * If <code>enable</code> is true, mod gets enabled. If false, mod gets disabled.
          */
         private void EnableMod(bool enable)
@@ -142,35 +139,47 @@ namespace GTA_Launcher
             cleanPath = Environment.ExpandEnvironmentVariables(cleanPath);
             string modPath = GamePath + "Grand Theft Auto V - mods";
             modPath = Environment.ExpandEnvironmentVariables(modPath);
-            if (enable)
+            try
             {
-                // if already enabled, do nothing
-                if (ModEnabled)
+                if (enable)
                 {
-                    return;
+                    // if already enabled, do nothing
+                    if (ModEnabled)
+                    {
+                        return;
+                    }
+
+                    // enable it
+                    // rename game folder to clean
+                    Directory.Move(gamePath, cleanPath);
+
+                    // rename mods folder to actual game
+                    Directory.Move(modPath, gamePath);
                 }
+                else
+                {
+                    // if already disabled, do nothing
+                    if (!ModEnabled)
+                    {
+                        return;
+                    }
 
-                // enable it
-                // rename game folder to clean
-                Directory.Move(gamePath, cleanPath);
-
-                // rename mods folder to actual game
-                Directory.Move(modPath, gamePath);
-            }
-            else
+                    // disable it
+                    // rename game folder to mod
+                    Directory.Move(gamePath, modPath);
+                    // rename clean folder to actual game
+                    Directory.Move(cleanPath, gamePath);
+                }
+            } catch (IOException) // handle cases where other process might be working on GTA directory, both game, mod, and clean
             {
-                // if already disabled, do nothing
-                if (!ModEnabled)
-                {
-                    return;
-                }
-
-                // disable it
-                // rename game folder to mod
-                Directory.Move(gamePath, modPath);
-                // rename clean folder to actual game
-                Directory.Move(cleanPath, gamePath);
+                string msgTitle = "Unable to process request";
+                string msgMessage = "Other process is using this directory. Terminate the other process and try again.";
+                MessageBoxIcon msgIcon = MessageBoxIcon.Error;
+                MessageBoxButtons msgButtons = MessageBoxButtons.OK;
+                MessageBox.Show(msgMessage, msgTitle, msgButtons, msgIcon);
             }
+            
+            SetButtonState();
         }
 
         /**
@@ -213,11 +222,18 @@ namespace GTA_Launcher
         {
             ModToggleBtn.Enabled = GamePath != "";
             RunGameBtn.Enabled = GamePath != "";
+            OpenPathBtn.Enabled = GTAExists;
             
             if (GamePath == "")
             {
                 ModStatusLabel.Text = "Game Path not Set";
-            } 
+            }
+            else if (!GTAExists)
+            {
+                ModStatusLabel.Text = "Invalid Game Path";
+                ModToggleBtn.Enabled = false;
+                RunGameBtn.Enabled = false;
+            }
             else
             {
                 if (ModEnabled)

@@ -40,7 +40,8 @@ namespace GTA_Launcher
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.SetPathBtn = new System.Windows.Forms.ToolStripButton();
+            this.OpenPathBtn = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -149,22 +150,33 @@ namespace GTA_Launcher
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.SetPathBtn,
+            this.OpenPathBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(262, 25);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // SetPathBtn
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(54, 22);
-            this.toolStripButton1.Text = "Set Path";
-            this.toolStripButton1.Click += new System.EventHandler(this.SetPathClicked);
+            this.SetPathBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SetPathBtn.Image = ((System.Drawing.Image)(resources.GetObject("SetPathBtn.Image")));
+            this.SetPathBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SetPathBtn.Name = "SetPathBtn";
+            this.SetPathBtn.Size = new System.Drawing.Size(54, 22);
+            this.SetPathBtn.Text = "Set Path";
+            this.SetPathBtn.Click += new System.EventHandler(this.SetPathClicked);
+            // 
+            // OpenPathBtn
+            // 
+            this.OpenPathBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.OpenPathBtn.Image = ((System.Drawing.Image)(resources.GetObject("OpenPathBtn.Image")));
+            this.OpenPathBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.OpenPathBtn.Name = "OpenPathBtn";
+            this.OpenPathBtn.Size = new System.Drawing.Size(67, 22);
+            this.OpenPathBtn.Text = "Open Path";
+            this.OpenPathBtn.Click += new System.EventHandler(this.OpenPathClicked);
             // 
             // MainScreen
             // 
@@ -199,7 +211,8 @@ namespace GTA_Launcher
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton SetPathBtn;
+        private System.Windows.Forms.ToolStripButton OpenPathBtn;
     }
 }
 
