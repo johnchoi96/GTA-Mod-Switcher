@@ -11,6 +11,8 @@ namespace GTA_Launcher
 
         public const string ModdedGameFolderName = $"{GameName} - mods";
 
+        public const string TempGameFolderName = $"{GameName} - temp";
+
         public const string GTASteamAppIdProcessName = @"steam://rungameid/271590";
 
         public const string RPHProcessName = "RAGEPluginHook.exe";

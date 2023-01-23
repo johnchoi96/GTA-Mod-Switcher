@@ -107,6 +107,23 @@ namespace GTA_Launcher
         private void UpdateGameClicked(object sender, EventArgs e)
         {
             // TODO: implement
+            // make sure mod is disabled
+            if (Constants.ModEnabled)
+            {
+                string msgtitle = "Invalid Operation!";
+                string msgmessage = "Mod must be disabled to update the game!";
+                MessageBoxIcon msgicon = MessageBoxIcon.Error;
+                MessageBoxButtons msgbuttons = MessageBoxButtons.OK;
+                MessageBox.Show(msgmessage, msgtitle, msgbuttons, msgicon);
+                return;
+            }
+
+            Directory.SetCurrentDirectory(Constants.GamePath);
+            Directory.CreateDirectory(Constants.TempGameFolderName);
+
+
+
+            Directory.Delete(Constants.TempGameFolderName, true);
         }
         #endregion
     }

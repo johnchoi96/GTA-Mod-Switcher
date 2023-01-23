@@ -6,3 +6,5 @@
 .vs/
 # DS Store
 .DS_Store
+# mono crash logs
+GTA_Launcher/GTA_Launcher/bin/Debug/mono_crash*
